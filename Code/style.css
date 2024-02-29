@@ -11,13 +11,13 @@ body {
 }
 
 .weather-App {
-    border: 1px solid black;
+    border: 1px solid rgb(42, 126, 194);
     display: block;
     text-align: center;
     padding: 20px;
-    background-color: rgb(181, 199, 212);
+    background-color: rgb(95, 133, 161);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px #e4eaf0ee;
     margin: auto;
     max-width: 350px;
 }
@@ -29,7 +29,7 @@ h1 {
 
 #currentWeather {
     color: #888;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('design/bacground.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Assets/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

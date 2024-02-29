@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    <div id="weatherApp">
-     <h1>Current Weather</h1>
-        <div id="weather-info">
-         <p>Loading...</p>
+    <div class="weather-App" id="weatherApp">
+        <h1>Current Weather</h1>
+            <div id="currentWeather">
+                <p>Loading...</p>
+
+                <div id="city-name"></div>
+                <div id="temperature"></div>
+                <div id="type-of-weather"></div>
         </div>
-
-        <div id="city-name"></div>
-
-        <div id="temperature"></div>
-
-        <div id="type-of-weather"></div>
     </div>
-<script src="script.js"></script>
+    <footer>
+        Credits: Photo by <a href="https://unsplash.com/@ghumuntu?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Abhishek Koli</a> on <a href="https://unsplash.com/photos/brown-rock-formation-near-body-of-water-during-daytime-v_IJOk65reM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    </footer>
+<script src="./script.js"></script>
 </body>
 </html>
