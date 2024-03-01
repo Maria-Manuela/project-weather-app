@@ -1,31 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
+html {
+    font-size: 16px;
+}
 body {
     font-family: "Roboto Condensed", sans-serif;
     background-color: #4769c0;
-    margin: 0;
-    padding: 0;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
+.weekly.forecast-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-.weather-App {
+.forecast-card h3 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.forecast-card p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.min-temp, .max-temp {
+    font-weight: bold;
+}
+
+.min-temp::before, .max-temp::before {
+    content: "Temperature: ";
+    font-weight: normal;
+}
+
+
+
+/*
+
+
+.weatherContainer {
     border: 1px solid rgb(42, 126, 194);
     display: block;
     text-align: center;
     padding: 20px;
     background-color: rgb(95, 133, 161);
     border-radius: 8px;
-    box-shadow: 0 0 10px #e4eaf0ee;
     margin: auto;
-    max-width: 350px;
+    max-width: 100%;
 }
 
-h1 {
-    font-size: 24px;
-    color: #333;
-}
+
 
 #currentWeather {
     color: #888;
@@ -34,6 +63,20 @@ h1 {
     background-position: center;
     background-repeat: no-repeat;
 }
+/*
+
+/*
+#forecast-card {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+.min-temp,
+.max-temp {
+    font-weight: bold;
+    color: #4CAF50;
+}
 
 #city-name {
     font-size: 20px;
@@ -41,12 +84,14 @@ h1 {
 }
 
 #temperature {
-    font-size: 36px;
+    font-size: 48px; 
     margin-top: 20px;
-    color: #4CAF50
+    color: #fff;
 }
+/*
 
 #type-of-weather {
     font-size: 18px;
     margin-top: 10px;
 }
+/*
