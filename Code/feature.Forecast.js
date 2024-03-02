@@ -49,7 +49,7 @@ async function todaysWeatherData(){
       weatherQuote = `Light a fire and get cozy. ${nameOfCity} is looking grey today!`;
     } else if (cityName === "Herning") {
       weatherIcon = `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Herning_Kommune_byv%C3%A5ben.svg/1641px-Herning_Kommune_byv%C3%A5ben.svg.png" alt="Herning"/>`;
-      weatherQuote = "Herning is a nice city to live in. Don't forget to smile!";
+      weatherQuote = "Herning: Embrace the weather, embrace the essence of Denmark!";
     } else {
       weatherIcon = ``;
       weatherQuote = ``;

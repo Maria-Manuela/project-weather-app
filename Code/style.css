@@ -2,18 +2,17 @@
 
 /* Design for all devices */
 body {
-    font-family: "Montserrat", sans-serif;
-    background-color: #f7e9b9;
-    margin: 30px;
-    padding: 0;
-  }
-  
-  .Clear {
-    background-color: #f7e9b9;
-    color: #2a5510;
-  }
+  font-family: "Roboto", condensed;
+  background-color: #f7e9b9;
+  margin: 30px;
+  padding: 0;
+}
 
-  
+.Clear {
+  background-color: #f7e9b9;
+  color: #2a5510;
+}
+
 .Clouds {
     background-color: #f4f7f8;
     color: #f47775;
