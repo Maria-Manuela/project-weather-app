@@ -9,27 +9,12 @@
 </head>
 <body>
     <main>
-        <section class="curerent-weather" id="curerentWeather"></section>
-            <div id="temperature"></div>
-            <div id="cityName"></div>
-            <div id="currentTime"></div>
-            <div id="weatherDescription"></div>
-            <div id="sunriseTine"></div>
-            <div id="sunsetTine"></div>
-    </section>
-
-    <section class="forecast" id="weatherForecast">
-     <h2 id="forecastCity"></h2>
-    <div class="weather-description">
-        <h3 id="forecastWeather"></h3>
-        <div id="forecastWeatherIcon"></div>
-     </div>
-    </div>
-    </main>
-
- <footer>
-        Credits: Photo by <a href="https://unsplash.com/@ghumuntu?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Abhishek Koli</a> on <a href="https://unsplash.com/photos/brown-rock-formation-near-body-of-water-during-daytime-v_IJOk65reM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-  </footer>
+        <div id="overview"></div>
+        <div id="forecastTable"></div>
+        <div id="weeklyForecast"></div>
+        </br>
+        <input type="text" id="cityInput" placeholder="Enter city" />
+          <button onclick="handleButtonClick()" id="myButton">Search</button>
 <script src="./feature.Forecast.js"></script>
 </body>
 </html>
