@@ -1,52 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Design for all devices */
 body {
-    font-family: "Roboto Condensed", sans-serif;
-    background-color: #4769c0;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: "Roboto", condensed;
+  background-color: #f7e9b9;
+  margin: 30px;
+  padding: 0;
 }
 
-.weather-App {
-    border: 1px solid rgb(42, 126, 194);
-    display: block;
-    text-align: center;
-    padding: 20px;
-    background-color: rgb(95, 133, 161);
-    border-radius: 8px;
-    box-shadow: 0 0 10px #e4eaf0ee;
-    margin: auto;
-    max-width: 350px;
+.Clear {
+  background-color: #f7e9b9;
+  color: #2a5510;
 }
 
-h1 {
-    font-size: 24px;
-    color: #333;
+.Clouds {
+  background-color: #f4f7f8;
+  color: #f47775;
 }
 
-#currentWeather {
-    color: #888;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Assets/background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.RainSnowOther {
+  background-color: #a3def7;
+  color: #164a68;
 }
 
-#city-name {
-    font-size: 20px;
-    margin-top: 10px;
+.quote {
+  font-size: 37px;
+  font-weight: 700;
 }
 
-#temperature {
-    font-size: 36px;
-    margin-top: 20px;
-    color: #4CAF50
+img {
+  height: 200px;
 }
 
-#type-of-weather {
-    font-size: 18px;
-    margin-top: 10px;
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
+
+td {
+  text-align: right;
+  padding: 8px;
+  border-bottom: 3px dotted #999;
+}
+
+td:first-child {
+  text-align: left;
+}
+
+
+/* Adaptations for phones */
+@media (max-width: 768px) {
+  img {
+    height: 150px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  td {
+    padding: 6px;
+  }
+}
+
+  

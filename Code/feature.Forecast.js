@@ -112,4 +112,4 @@ async function todaysWeatherData(){
     } else {
         alert("Sorry, I could not find a city with that name :(");
     }
-}
+};
