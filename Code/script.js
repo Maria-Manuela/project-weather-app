@@ -1,3 +1,4 @@
+
 // Accessing the HTML document by assigning elements in the file in variables in JS.
 const overview = document.getElementById("overview");
 const forecastTable = document.getElementById("forecastTable");
@@ -98,7 +99,7 @@ async function fetchWeeklyForecast(){
 
 todaysWeatherData();
 fetchWeeklyForecast();
-
+ 
 // Function will assign the cityName variable a city based on the input we get from the user.
 myButton.addEventListener("click", function() {
   const inputCity = cityInput.value;

@@ -2,7 +2,7 @@
 
 /* Design for all devices */
 body {
-  font-family: "Roboto", condensed;
+  font-family: "Roboto Condensed", "Roboto", sans-serif;
   background-color: #f7e9b9;
   margin: 30px;
   padding: 0;
@@ -63,4 +63,39 @@ body {
       padding: 6px;
     }
   }
+
+  background-color: #f4f7f8;
+  color: #f47775;
+}
+
+.RainSnowOther {
+  background-color: #a3def7;
+  color: #164a68;
+}
+
+.quote {
+  font-size: 37px;
+  font-weight: 700;
+}
+
+img {
+  height: 200px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  text-align: right;
+  padding: 8px;
+  border-bottom: 3px dotted #999;
+}
+
+td:first-child {
+  text-align: left;
+}
+
   
