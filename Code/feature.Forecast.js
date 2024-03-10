@@ -6,7 +6,7 @@ const cityInput = document.getElementById("cityInput");
 const myButton = document.getElementById("myButton");
 const weeklyForecast = document.getElementById("weeklyForecast");
 const body = document.body;
-
+console.log(todaysWeatherData)
 // OpenWeatherMap API key
 const API_Key = "4f1f799026ecba0bd7e986152b35fba5";
 // The city from where we want to get the weather
@@ -18,7 +18,6 @@ let cityName = "Herning";
 async function todaysWeatherData(){
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_Key}&units=metric`);
     var data = await response.json(); // Will make the data that we have fetched readable.
-    console.log(data); // Will show us the data we have fetched in the console.
     
     // Data that we have fetched from the API stored in variables to make it easier to read and understand.
     const description = data.weather[0].main;
@@ -37,7 +36,7 @@ async function todaysWeatherData(){
       weatherQuote = `Get your sunnies on. ${nameOfCity} is looking rather great today!`;
     } else if (cityName != "Herning" && description === "Snow") {
       body.className = "RainSnowOther"; // Will change the class of the HTML body.
-      weatherIcon = `<img src="" alt="Snow"/>`;
+      weatherIcon = `<img src="https://www.svgrepo.com/show/75690/snowing.svg" alt="Snow"/>`;
       weatherQuote = `Bring your warmest jacket. ${nameOfCity} is looking white today!`;
     } else if (cityName != "Herning" && description === "Rain") {
       body.className = "RainSnowOther"; // Will change the class of the HTML body.
@@ -67,40 +66,52 @@ async function todaysWeatherData(){
       </br>
       `;
   };
+
   
-  async function fetchWeeklyForecast(){
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_Key}&units=metric`);
-    const data = await response.json(); // Will make the data that you have fetched visible.
-   // console.log(data); // Will let you see the data in the console.
+    async function fetchWeeklyForecast(){
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_Key}&units=metric`);
+      const data = await response.json(); // Will make the data that you have fetched visible.
+     // console.log(data); // Will let you see the data in the console.
   
-    // Filter the forecast data so we only get the weather for the days when the clock is 15:00.
-    const dailyForecasts = data.list.filter((item) => item.dt_txt.includes("12:00:00"));
-    
-    // Open the table.
-    let forecastTableHTML = `<table>`;
-    
-    // Will store data from each day in different variables.
-    dailyForecasts.forEach((forecast) => {
-      const date = new Date(forecast.dt * 1000);
-      const day = date.toLocaleDateString("da-DK", {weekday: "long"}); // to convert the dates to the name of the date.
-      const temp = (forecast.main.temp).toFixed(1); // Get the temperature of the date and round it to an integer.
-      
-      // Create a row for each day and temperature of that day.
-      forecastTableHTML += `
-        <tr>
-          <td>${day}</td>
-          <td>${temp}°C</td>
-        </tr>
-      `;
+      // Filter the forecast data to get the weather for the next 4 days, information collected at 12:00 each day
+      const dailyForecasts = data.list.filter(item => {
+        // Get the date and time of the forecast item
+        const forecastDate = new Date(item.dt_txt);
+        
+        // Check if the forecast item is for 12:00 and within the next 4 days
+        const isMiddayForecast = forecastDate.getHours() === 12;
+        const isWithinFourDays = forecastDate >= new Date() && forecastDate <= new Date(new Date().getTime() + 4 * 24 * 60 * 60 * 1000);
+
+        return isMiddayForecast && isWithinFourDays;
     });
-    // Will close the table.
-    forecastTableHTML += `</table>`;
-    weeklyForecast.innerHTML = forecastTableHTML;
-  };
+
   
-  todaysWeatherData();
-  fetchWeeklyForecast();
+      // Open the table.
+      let forecastTableHTML = `<table>`;
   
+      // Will store data from each day in different variables.
+      dailyForecasts.forEach((forecast) => {
+        const date = new Date(forecast.dt * 1000);
+        const day = date.toLocaleDateString("en-DK", {weekday: "short"}); // to convert the dates to the name of the date.
+        const temp = (forecast.main.temp).toFixed(1); // Get the temperature of the date and round it to an integer.
+  
+        // Create a row for each day and temperature of that day.
+        forecastTableHTML += `
+          <tr>
+            <td>${day}</td>
+            <td>${temp}°C</td>
+          </tr>
+        `;
+      });
+      // Will close the table.
+      forecastTableHTML += `</table>`;
+      weeklyForecast.innerHTML = forecastTableHTML;
+    };
+
+    
+    todaysWeatherData();
+    fetchWeeklyForecast();
+
   // Function will assign the cityName variable a city based on the input we get from the user.
 
   function handleButtonClick() {
